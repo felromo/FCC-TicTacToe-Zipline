@@ -264,10 +264,6 @@ angular.module('tictacmod', [])
     }
   };
 
-  self.popOutMenu = function () {
-    console.log("menu popped up");
-  };
-
   self.switchPieces = function (piece) {
     gameFactory.changePiece(piece);
   };
