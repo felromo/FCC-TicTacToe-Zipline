@@ -1,0 +1,176 @@
+html, body {
+  height: 100%;
+  background: #3d2117;
+  position: relative;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+}
+
+section#game {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  height: 100%;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+h1.player-piece {
+  color: #fefce8;
+  margin: 0 auto;
+  text-align: center;
+  position: relative;
+  top: 20px;
+}
+
+.board {
+  height: 80%;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.column {
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: row;
+      -ms-flex-direction: row;
+          flex-direction: row;
+}
+
+.square {
+  height: 125px;
+  width: 125px;
+  background: inherit;
+  color: black;
+  margin: 0;
+  box-sizing: border-box;
+  cursor: pointer;
+  padding: auto auto;
+  display: table;
+  text-align: center;
+}
+
+.vertical-border {
+  border-right: 2px solid #fefce8;
+}
+
+.horizontal-border {
+  border-bottom: 2px solid #fefce8;
+}
+
+.config-pullout {
+  margin: 0px auto;
+}
+.config-pullout button {
+  background: #3d2117;
+  border: none;
+  cursor: pointer;
+}
+.config-pullout button:focus {
+  outline: none;
+}
+.config-pullout i {
+  font-size: 4em;
+  color: #fefce8;
+}
+
+.config {
+  position: absolute;
+  bottom: 10%;
+  width: 100%;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: row;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  color: #fefce8;
+}
+.config button {
+  background: #3d2117;
+  border: none;
+  cursor: pointer;
+  font-size: 2em;
+}
+.config button:focus {
+  outline: none;
+}
+.config button.choice-x {
+  color: #c84127;
+}
+.config button.choice-o {
+  color: #67c5c2;
+}
+
+.game-piece {
+  font-size: 4em;
+  color: #c84127;
+  vertical-align: middle;
+  display: table-cell;
+}
+
+.game-piece-x {
+  color: #c84127;
+}
+
+.game-piece-o {
+  color: #67c5c2;
+}
+
+@media only screen and (min-width: 480px), only screen and (min-device-width: 480px) {
+  .config-pullout {
+    display: none;
+  }
+}
+@media only screen and (max-width: 480px), only screen and (max-device-width: 480px) {
+  .config {
+    display: none;
+  }
+
+  .config-pullout {
+    display: block;
+    position: absolute;
+    bottom: 10px;
+    width: 100%;
+    text-align: center;
+  }
+  .config-pullout button {
+    background: #3d2117;
+    border: none;
+    cursor: pointer;
+  }
+  .config-pullout button:focus {
+    outline: none;
+  }
+  .config-pullout i {
+    font-size: 4em;
+    color: #fefce8;
+  }
+}

@@ -1,0 +1,63 @@
+<!DOCTYPE >
+<html ng-app="tictacmod">
+  <head>
+    <title>TicTacToe</title>
+    <meta name="viewport" content="width=device-width" />
+    <link rel="stylesheet" href="bower_components/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="includes/style.css">
+  </head>
+  <body ng-controller="gameController as gameCtrl">
+    <section id="game" ng-cloak>
+      <h1 class="player-piece">You are: <span ng-class="gameCtrl.getPlayerClass()">{{gameCtrl.getPlayerPiece()}}</span></h1>
+      <!-- <div id="player-headline"></div> -->
+      <div class="board">
+        <div class="column">
+          <div class="square vertical-border horizontal-border" ng-click="gameCtrl.makePlayerMove($event)">
+            <span id="0" class="game-piece" ng-class="gameCtrl.getTile(0).occupant.className">{{gameCtrl.getTile(0).occupant.piece}}</span>
+          </div>
+          <div class="square vertical-border horizontal-border" ng-click="gameCtrl.makePlayerMove($event)">
+            <span id="1" class="game-piece" ng-class="gameCtrl.getTile(1).occupant.className">{{gameCtrl.getTile(1).occupant.piece}}</span>
+          </div>
+          <div class="square vertical-border" ng-click="gameCtrl.makePlayerMove($event)">
+            <span id="2" class="game-piece" ng-class="gameCtrl.getTile(2).occupant.className">{{gameCtrl.getTile(2).occupant.piece}}</span>
+          </div>
+        </div>
+        <div class="column">
+          <div class="square vertical-border horizontal-border" ng-click="gameCtrl.makePlayerMove($event)">
+            <span id="3" class="game-piece" ng-class="gameCtrl.getTile(3).occupant.className">{{gameCtrl.getTile(3).occupant.piece}}</span>
+          </div>
+          <div class="square vertical-border horizontal-border" ng-click="gameCtrl.makePlayerMove($event)">
+            <span id="4" class="game-piece" ng-class="gameCtrl.getTile(4).occupant.className">{{gameCtrl.getTile(4).occupant.piece}}</span>
+          </div>
+          <div class="square vertical-border" ng-click="gameCtrl.makePlayerMove($event)">
+            <span id="5" class="game-piece" ng-class="gameCtrl.getTile(5).occupant.className">{{gameCtrl.getTile(5).occupant.piece}}</span>
+          </div>
+        </div>
+        <div class="column">
+          <div class="square horizontal-border" ng-click="gameCtrl.makePlayerMove($event)">
+            <span id="6" class="game-piece" ng-class="gameCtrl.getTile(6).occupant.className">{{gameCtrl.getTile(6).occupant.piece}}</span>
+          </div>
+          <div class="square horizontal-border" ng-click="gameCtrl.makePlayerMove($event)">
+            <span id="7" class="game-piece" ng-class="gameCtrl.getTile(7).occupant.className">{{gameCtrl.getTile(7).occupant.piece}}</span>
+          </div>
+          <div class="square" ng-click="gameCtrl.makePlayerMove($event)">
+            <span id="8" class="game-piece" ng-class="gameCtrl.getTile(8).occupant.className">{{gameCtrl.getTile(8).occupant.piece}}</span>
+          </div>
+        </div>
+      </div><!-- end of board -->
+      <div class="config">
+        <button type="button" class="choice-x" ng-click="gameCtrl.switchPieces('X')">X</button>
+        <h2>OR</h2>
+        <button type="button" class="choice-o" ng-click="gameCtrl.switchPieces('O')">O</button>
+      </div>
+      <div id="player-footer"></div>
+      <div class="config-pullout">
+        <button type="button" ng-click="gameCtrl.popOutMenu()"><i class="fa fa-cog"></i></button>
+      </div>
+    </section>
+
+    <script src="bower_components/angular/angular.min.js"></script>
+    <script src="includes/main.js"></script>
+
+  </body>
+</html>
