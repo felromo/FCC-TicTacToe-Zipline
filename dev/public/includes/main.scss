@@ -123,29 +123,3 @@ h1.player-piece {
   }
 }
 
-@media only screen and (max-width: 480px), only screen and (max-device-width: 480px) {
-
-  .config {
-    display: none;
-  }
-
-  .config-pullout {
-    display: block;
-    position: absolute;
-    bottom: 10px;
-    width: 100%;
-    text-align: center;
-    button {
-      background: $background-color;
-      border: none;
-      cursor: pointer;
-      &:focus {
-        outline: none;
-      }
-    }
-    i {
-      font-size: 4em;
-      color: $board-outline-color;
-    }
-  }
-}
