@@ -1,0 +1,151 @@
+
+$background-color: #3d2117;
+$board-outline-color: #fefce8;
+$board-height: 125px;
+$board-width: 125px;
+$board-thickness: 2px;
+$piece-x-color: #c84127;
+$piece-o-color: #67c5c2;
+
+html, body {
+  height: 100%;
+  background: $background-color;
+  position: relative;
+  user-select: none;
+}
+
+section#game {
+  display: flex;
+  height: 100%;
+  flex-direction: column;
+}
+
+
+h1.player-piece {
+  color: $board-outline-color;
+  margin: 0 auto;
+  text-align: center;
+  position: relative;
+  top: 20px;
+}
+
+.board {
+  height: 80%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.column {
+  flex-direction: row;
+}
+
+.square {
+  height: $board-height;
+  width: $board-width;
+  background: inherit;
+  color: black;
+  // display: inline-block;
+  margin: 0;
+  box-sizing: border-box;
+  cursor: pointer;
+  padding: auto auto;
+  display: table;
+  text-align: center;
+}
+
+.vertical-border {
+  border-right: $board-thickness solid $board-outline-color;
+}
+
+.horizontal-border {
+  border-bottom: $board-thickness solid $board-outline-color;
+}
+
+.config-pullout {
+  margin: 0px auto;
+  button {
+    background: $background-color;
+    border: none;
+    cursor: pointer;
+    &:focus {
+      outline: none;
+    }
+  }
+  i {
+    font-size: 4em;
+    color: $board-outline-color;
+  }
+}
+
+.config {
+  position: absolute;
+  bottom: 10%;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  color: $board-outline-color;
+  button {
+    background: $background-color;
+    border: none;
+    cursor: pointer;
+    font-size: 2em;
+    &:focus {
+      outline: none;
+    }
+    &.choice-x {
+      color: $piece-x-color;
+    }
+    &.choice-o {
+      color: $piece-o-color;
+    }
+  }
+}
+
+.game-piece {
+  // font-size: 1.2em;
+  font-size: 4em;
+  color: $piece-x-color;
+  vertical-align: middle;
+  display: table-cell;
+}
+
+.game-piece-x { color:$piece-x-color; }
+.game-piece-o { color:$piece-o-color; }
+
+
+// dont think this needs to be in media query, review later
+@media only screen and (min-width: 480px), only screen and (min-device-width: 480px) {
+  .config-pullout {
+    display: none;
+  }
+}
+
+@media only screen and (max-width: 480px), only screen and (max-device-width: 480px) {
+
+  .config {
+    display: none;
+  }
+
+  .config-pullout {
+    display: block;
+    position: absolute;
+    bottom: 10px;
+    width: 100%;
+    text-align: center;
+    button {
+      background: $background-color;
+      border: none;
+      cursor: pointer;
+      &:focus {
+        outline: none;
+      }
+    }
+    i {
+      font-size: 4em;
+      color: $board-outline-color;
+    }
+  }
+}
